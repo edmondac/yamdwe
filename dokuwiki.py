@@ -210,7 +210,7 @@ def make_dokuwiki_pagename(mediawiki_name):
     result = result.replace(":_", ":")
     # Add custom namespace
     result = "old_wiki:" + result
-    result = codecs.encode(result, sys.getfilesystemencoding(), "replace")
+    result = codecs.encode(result, sys.getfilesystemencoding())
     return result
 
 def make_dokuwiki_heading_id(mw_heading_name):

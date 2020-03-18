@@ -41,9 +41,9 @@ def main():
         print("WARNING: Mediawiki URL does not end in 'api.php'... This has to be the URL of the Mediawiki API, not just the wiki. If you can't export anything, try adding '/api.php' to the wiki URL.")
 
     if "domain" in inspect.getargspec(simplemediawiki.MediaWiki.__init__)[0]:
-        importer = mediawiki.Importer(args.mediawiki, args.http_user, args.http_pass, args.wiki_user, args.wiki_pass, args.wiki_domain, args.verbose)
+        importer = mediawiki.Importer(args.mediawiki, args.http_user, args.http_pass, args.wiki_user, args.wiki_pass, args.wiki_domain, verbose=args.verbose)
     else:
-        importer = mediawiki.Importer(args.mediawiki, args.http_user, args.http_pass, args.wiki_user, args.wiki_pass, args.verbose)
+        importer = mediawiki.Importer(args.mediawiki, args.http_user, args.http_pass, args.wiki_user, args.wiki_pass, verbose=args.verbose)
     exporter = dokuwiki.Exporter(args.dokuwiki)
 
     # Set the wikicontent's definition of File: and Image: prefixes (varies by language settings)

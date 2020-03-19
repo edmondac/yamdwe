@@ -93,6 +93,15 @@ class Exporter(object):
         for d in pagedir, metadir, atticdir:
             ensure_directory_exists(d)
 
+        # Links don't work if the name ends with an underscore...
+        if pagename[-1] == '_':
+            pagename = pagename[:-1]
+        if pagename[0] == '_':
+            pagename = pagename[1:]
+
+        #if 'psh_handover_-_hpc_midlands' in pagename:
+        #    import pdb; pdb.set_trace()
+
         # Walk through the list of revisions
         revisions = list(reversed(page["revisions"])) # order as oldest first
         for revision in revisions:

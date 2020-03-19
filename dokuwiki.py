@@ -99,9 +99,6 @@ class Exporter(object):
         if pagename[0] == '_':
             pagename = pagename[1:]
 
-        #if 'psh_handover_-_hpc_midlands' in pagename:
-        #    import pdb; pdb.set_trace()
-
         # Walk through the list of revisions
         revisions = list(reversed(page["revisions"])) # order as oldest first
         for revision in revisions:
